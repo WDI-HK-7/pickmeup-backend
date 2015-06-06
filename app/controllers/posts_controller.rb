@@ -51,11 +51,11 @@ class PostsController < ApplicationController
       end
     end
   end
-  
+
   private
 
   def post_params
-    params.require(:post).permit(:pulocation, :putime, :destination, :delitime, :contactnum)
+    params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :contactnum)
   end
 
 end
