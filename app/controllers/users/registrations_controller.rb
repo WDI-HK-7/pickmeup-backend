@@ -12,4 +12,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :json => user.errors, :status=>422
     end
   end
+
+  private
+
+  # post_params comes from the Post.new(post_params) from def create
+  def sign_up_params
+    # params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :contactnum)
+    params.require(:user).permit(:username, :contactnum, :email, :password)
+  end
+
 end

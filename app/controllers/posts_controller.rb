@@ -75,7 +75,7 @@ class PostsController < ApplicationController
   # post_params comes from the Post.new(post_params) from def create
   def post_params
     # params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :contactnum)
-    params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :user_id)
+    params.require(:post).permit(:pulocation, :packagetype, :putime, :pudate, :destination, :delitime, :delidate, :remarks, :user_id)
   end
 
 end
