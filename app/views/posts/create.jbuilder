@@ -5,3 +5,4 @@ json.destination @post.destination
 json.delitime @post.delitime
 json.pudate @post.pudate
 json.contactnum @post.contactnum
+json.user_id @post.user_id

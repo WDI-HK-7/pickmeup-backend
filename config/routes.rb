@@ -6,4 +6,11 @@ Rails.application.routes.draw do
 
   resources :posts
   # ...
+
+  devise_scope :user do
+    get 'authenticated' => 'users/sessions#authenticated'
+  end
+
+
 end
+

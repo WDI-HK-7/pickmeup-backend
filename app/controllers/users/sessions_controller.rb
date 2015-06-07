@@ -19,4 +19,9 @@ class Users::SessionsController < Devise::SessionsController
     signed_out = sign_out(resource_name)
     render json: {:success => true, :message => "logged out"}
   end
+
+  def authenticated
+    render json: current_user
+  end
+
 end
