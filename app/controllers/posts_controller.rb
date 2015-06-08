@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
 
   def index
-    @posts = Post.all # here we are retrieving all the Post data, and store them in the variable @posts
+    @posts = Post.where(status: params[:status]) # here we are retrieving all the Post data, and store them in the variable @posts
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     # @post = current_user.posts.new(post_params)
 
     # @post.save
@@ -75,7 +75,7 @@ class PostsController < ApplicationController
   # post_params comes from the Post.new(post_params) from def create
   def post_params
     # params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :contactnum)
-    params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :user_id)
+    params.require(:post).permit(:pulocation, :packagetype, :putime, :pudate, :destination, :delitime, :delidate, :remarks, :user_id, :status)
   end
 
 end
