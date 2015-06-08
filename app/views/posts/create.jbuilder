@@ -1,11 +1,10 @@
 
 json.pulocation @post.pulocation
 json.packagetype @post.packagetype
-json.pudate @post.pudate
-json.putime @post.putime
+json.earlyputime @post.earlyputime
+json.lateputime @post.lateputime
 json.destination @post.destination
-json.delidate @post.delidate
-json.delitime @post.delitime
+json.earlydelitime @post.earlydelitime
+json.latedelitime @post.latedelitime
 json.remarks @post.remarks
-json.pudate @post.pudate
 json.user_id @post.user_id

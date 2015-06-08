@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(version: 20150608055745) do
   create_table "posts", force: :cascade do |t|
     t.string   "packagetype"
     t.string   "pulocation"
-    t.date     "pudate"
-    t.time     "putime"
+    t.datetime "earlyputime"
+    t.datetime "lateputime"
     t.string   "destination"
-    t.date     "delidate"
-    t.time     "delitime"
+    t.datetime "earlydelitime"
+    t.datetime "latedelitime"
     t.string   "remarks"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "user_id"
     t.string   "status"
     t.integer  "postman_id"

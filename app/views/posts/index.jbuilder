@@ -2,16 +2,32 @@ json.array! @posts do |post|
   json.id post.id
   json.pulocation post.pulocation
   json.packagetype post.packagetype
-  json.pudate post.pudate
-  json.putime post.putime
+  json.earlyputime post.earlyputime
+  json.lateputime post.lateputime
   json.destination post.destination
-  json.delidate post.delidate
-  json.delitime post.delitime
+  json.earlydelitime post.earlydelitime
+  json.latedelitime post.latedelitime
   json.remarks post.remarks
   json.username post.user.username
   json.user_id post.user.id
   json.postman_id post.postman_id
   json.contactnum post.user.contactnum
   json.status post.status
+end
 
+json.array! @posts_current_user do |post|
+  json.id post.id
+  json.pulocation post.pulocation
+  json.packagetype post.packagetype
+  json.earlyputime post.earlyputime
+  json.lateputime post.lateputime
+  json.destination post.destination
+  json.earlydelitime post.earlydelitime
+  json.latedelitime post.latedelitime
+  json.remarks post.remarks
+  json.username post.user.username
+  json.user_id post.user.id
+  json.postman_id post.postman_id
+  json.contactnum post.user.contactnum
+  json.status post.status
 end

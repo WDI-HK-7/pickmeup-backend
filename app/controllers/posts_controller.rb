@@ -5,6 +5,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where(status: params[:status]) # here we are retrieving all the Post data, and store them in the variable @posts
+  
+    # @posts_current_user = current_user.posts.where(status: params[:status]) # here we are retrieving all the Post data, and store them in the variable @posts
+
   end
 
   def create
@@ -75,7 +78,7 @@ class PostsController < ApplicationController
   # post_params comes from the Post.new(post_params) from def create
   def post_params
     # params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :contactnum)
-    params.require(:post).permit(:pulocation, :packagetype, :putime, :pudate, :destination, :delitime, :delidate, :remarks, :user_id, :status)
+    params.require(:post).permit(:pulocation, :packagetype, :earlyputime, :lateputime, :destination, :earlydelitime, :latedelitime, :remarks, :user_id, :status)
   end
 
 end
