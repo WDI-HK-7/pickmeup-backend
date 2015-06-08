@@ -1,4 +1,4 @@
-
+json.id @post.id
 json.pulocation @post.pulocation
 json.packagetype @post.packagetype
 json.pudate @post.pudate
@@ -9,3 +9,6 @@ json.delitime @post.delitime
 json.remarks @post.remarks
 json.pudate @post.pudate
 json.user_id @post.user_id
+json.contactnum @post.user.contactnum
+json.postman_id @post.postman_id
+json.status @post.status

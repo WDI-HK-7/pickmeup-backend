@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all # here we are retrieving all the Post data, and store them in the variable @posts
+    @posts = Post.where(status: params[:status]) # here we are retrieving all the Post data, and store them in the variable @posts
   end
 
   def create

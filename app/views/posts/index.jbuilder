@@ -1,4 +1,5 @@
 json.array! @posts do |post|
+  json.id post.id
   json.pulocation post.pulocation
   json.packagetype post.packagetype
   json.pudate post.pudate
@@ -9,6 +10,8 @@ json.array! @posts do |post|
   json.remarks post.remarks
   json.username post.user.username
   json.user_id post.user.id
+  json.postman_id post.postman_id
   json.contactnum post.user.contactnum
+  json.status post.status
 
 end
