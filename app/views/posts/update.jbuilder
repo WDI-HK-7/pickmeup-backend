@@ -1,4 +1,4 @@
-
+json.id @post.id
 json.pulocation @post.pulocation
 json.packagetype @post.packagetype
 json.earlyputime @post.earlyputime
@@ -9,3 +9,4 @@ json.latedelitime @post.latedelitime
 json.remarks @post.remarks
 json.user_id @post.user_id
 json.status @post.status
+json.postman_id @post.postman_id
