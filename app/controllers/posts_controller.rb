@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   end
 
   def postmanposts
-    @postmanposts_current_user = Post.where(status: params[:status], postman_id: current_user).order(earlyputime: :desc) # here we are retrieving all the Post data, and store them in the variable @posts
+    @postmanposts_current_user = Post.where(status: params[:status], postman_id: current_user.id).order(earlyputime: :desc) # here we are retrieving all the Post data, and store them in the variable @posts
+    # @postmanposts_current_user = Post.where(status: params[:status], postman_id: current_user.id).order(earlyputime: :desc) # here we are retrieving all the Post data, and store them in the variable @posts
   end
 
 
