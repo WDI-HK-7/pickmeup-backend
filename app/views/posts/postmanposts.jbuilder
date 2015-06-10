@@ -1,4 +1,4 @@
-json.array! @posts do |post|
+json.array! @postmanposts_current_user do |post|
   json.id post.id
   json.pulocation post.pulocation
   json.packagetype post.packagetype

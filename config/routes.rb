@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   }
 
   resources :posts
-  # ...
+
+  get 'users/:id/posts' => 'posts#userposts'
+  get 'users/:id/postmanposts' => 'posts#postmanposts'
 
   devise_scope :user do
     get 'authenticated' => 'users/sessions#authenticated'

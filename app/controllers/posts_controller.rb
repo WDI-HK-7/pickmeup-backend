@@ -4,15 +4,27 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.where(status: params[:status]) # here we are retrieving all the Post data, and store them in the variable @posts
+    @posts = Post.where(status: params[:status]).order(earlyputime: :desc) # here we are retrieving all the Post data, and store them in the variable @posts
+    @posts -= current_user.posts
+
   end
+
+  def userposts
+    @posts_current_user = current_user.posts.where(status: params[:status]).order(earlyputime: :desc) # here we are retrieving all the Post data, and store them in the variable @posts
+  end
+
+  def postmanposts
+    @postmanposts_current_user = Post.where(status: params[:status], postman_id: current_user.id).order(earlyputime: :desc) # here we are retrieving all the Post data, and store them in the variable @posts
+    # @postmanposts_current_user = Post.where(status: params[:status], postman_id: current_user.id).order(earlyputime: :desc) # here we are retrieving all the Post data, and store them in the variable @posts
+  end
+
 
   def create
     @post = current_user.posts.new(post_params)
     # @post = current_user.posts.new(post_params)
 
     # @post.save
-  
+
     if @post.save
       render :json => {message: "saved", post: @post}
     else
@@ -75,7 +87,7 @@ class PostsController < ApplicationController
   # post_params comes from the Post.new(post_params) from def create
   def post_params
     # params.require(:post).permit(:pulocation, :putime, :pudate, :destination, :delitime, :contactnum)
-    params.require(:post).permit(:pulocation, :packagetype, :putime, :pudate, :destination, :delitime, :delidate, :remarks, :user_id, :status)
+    params.require(:post).permit(:pulocation, :packagetype, :earlyputime, :lateputime, :destination, :earlydelitime, :latedelitime, :remarks, :user_id, :status, :postman_id)
   end
 
 end
